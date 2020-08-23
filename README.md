@@ -1,25 +1,27 @@
 ## General information
 
 The goal of this project is to collect various Docker images files related to
-the Ada programming language. All images are based on the newest Ubuntu
-release.
+the Ada programming language.
 
 ## Images list
 
 At this moment available files are:
 
 * Dockerfile.gnat - The base image with GNAT FSF version and Gprbuild for
-  Linux 64bit
+  Linux 64bit. Based on the newest Ubuntu release.
 * Dockerfile.gnatgtk - The base image with GNAT FSF version, development
-  version of GtkAda library and Gprbuild for Linux 64bit
+  version of GtkAda library and Gprbuild for Linux 64bit. Based on the newest
+  Ubuntu release.
 * Dockerfile.gnattashy - The base image with GNAT FSF version, TASHY library
-  and Gprbuild for Linux 64bit
+  and Gprbuild for Linux 64bit. Based on the newest Ubuntu release.
 * Dockerfile.mingw64 - The base image with GNAT MinGW 64bit FSF version and
-  Gprbuild
+  Gprbuild. Based on the newest Ubuntu release.
 * Dockerfile.aarch64 - The base image with GNAT FSF 10 version and Gprbuild
-  for Arm64 (aarch64) architecture
+  for Arm64 (aarch64) architecture. Based on the stable Debian release.
+  **Beta, not fully tested. Please report any problems with it.**
 * Dockerfile.gnueabihf -The base image with GNAT FSF 10 version and Gprbuild
-  for armv7 (32 bit), example: Raspberry Pi
+  for armv7 (32 bit), example: Raspberry Pi. Based on the stable Debian
+  release. **Beta, not fully tested. Please report any problems with it.**
 
 ## Usage
 
