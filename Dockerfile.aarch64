@@ -1,6 +1,7 @@
-FROM ubuntu
+FROM debian
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
+ && dpkg --add-architecture arm64 \
  && apt-get update && apt-get install -y \
  gnat-10-aarch64-linux-gnu \
  gprbuild \
