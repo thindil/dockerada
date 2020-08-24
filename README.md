@@ -18,10 +18,9 @@ At this moment available files are:
   Gprbuild. Based on the newest Ubuntu release.
 * Dockerfile.aarch64 - The base image with GNAT FSF 10 version and Gprbuild
   for Arm64 (aarch64) architecture. Based on the stable Debian release.
-  **Beta, not fully tested. Please report any problems with it.**
-* Dockerfile.gnueabihf -The base image with GNAT FSF 10 version and Gprbuild
+* Dockerfile.gnueabihf - The base image with GNAT FSF 10 version and Gprbuild
   for armv7 (32 bit), example: Raspberry Pi. Based on the stable Debian
-  release. **Beta, not fully tested. Please report any problems with it.**
+  release.
 
 ## Usage
 
