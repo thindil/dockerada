@@ -6,7 +6,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  gprbuild \
  && sed -i -e 's/-pc-mingw/-w64-mingw/g' /usr/share/gprconfig/* \
  && ln -s /bin/x86_64-w64-mingw32-gcc /bin/x86_64-w64-mingw32-gnatgcc \
- && ln -s x86_64-w64-mingw32-ar x86_64-windows-ar \
+ && ln -s /bin/x86_64-w64-mingw32-ar /bin/x86_64-windows-ar \
  && mkdir -p /usr/libexec/gprbuild \
  && ln -s /usr/lib/gprbuild/gprlib /usr/libexec/gprbuild/gprlib \
  && apt-get clean \
