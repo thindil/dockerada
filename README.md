@@ -1,7 +1,7 @@
 ## General information
 
 The goal of this project is to collect various Docker images files related to
-the Ada programming language. Using this images require Github account (yes,
+the Ada programming language. Using these images requires Github account (yes,
 Github requires authentication even for pulling)
 
 ## Images list
