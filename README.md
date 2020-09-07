@@ -51,7 +51,7 @@ any additional library, you have to install it with suffix `:armhf`.
 Example: `apt install libgtkada-dev:armhf`. To use it, you will need to setup
 `--target=arm-linux-gnueabihf`. Example:
 
-`sudo docker run -v $(pwd):/app docker.pkg.github.com/thindil/dockerada/gnat-arm7:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabigf"`
+`sudo docker run -v $(pwd):/app docker.pkg.github.com/thindil/dockerada/gnat-arm7:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
 
 ## Usage
 
