@@ -37,8 +37,8 @@ setup `--target=x86_64-windows`. Example:
 
 The base image with GNAT FSF version and gprbuild for Arm64 (aarch64)
 architecture. Based on the stable Debian release. If you want to use any
-additional library, you have to install it with suffix `:aarch64`. Example:
-`apt install tcl-dev:aarch64`. To use it, you will need to setup
+additional library, you have to install it with suffix `:arm64`. Example:
+`apt install tcl-dev:arm64`. To use it, you will need to setup
 `--target=aarch64-linux-gnu`. Example:
 
 `sudo docker run -v $(pwd):/app docker.pkg.github.com/thindil/dockerada/gnat-arm64:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=aarch64-linux-gnu"`
