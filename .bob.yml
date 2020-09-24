@@ -1,0 +1,34 @@
+version: 2.0
+- command:
+   name: docker
+   execute:
+      - sudo docker build -f Dockerfile.aarch64 -t ghcr.io/$1/gnat-arm64:$2 .
+      - sudo docker build -f Dockerfile.gnat -t ghcr.io/$1/gnat:$2 .
+      - sudo docker build -f Dockerfile.gnatgtk -t ghcr.io/$1/gnatgtk:$2 .
+      - sudo docker build -f Dockerfile.gnueabihf -t ghcr.io/$1/gnat-arm7:$2 .
+      - sudo docker build -f Dockerfile.mingw64 -t ghcr.io/$1/gnat-mingw64:$2 .
+   description: Create Docker images of GNAT (required argument is the username and the image version)
+   flags:
+      - unixonly
+- command:
+   name: push
+   execute:
+      - sudo docker push ghcr.io/$1/gnat-arm64:$2
+      - sudo docker push ghcr.io/$1/gnat:$2
+      - sudo docker push ghcr.io/$1/gnatgtk:$2
+      - sudo docker push ghcr.io/$1/gnat-arm7:$2
+      - sudo docker push ghcr.io/$1/gnat-mingw64:$2
+   description: Push Docker images of GNAT to a repository (required argument is the username and the image version)
+   flags:
+      - unixonly
+- command:
+   name: clear
+   execute:
+      - sudo docker image rm ghcr.io/$1/gnat-arm64:$2
+      - sudo docker image rm ghcr.io/$1/gnat:$2
+      - sudo docker image rm ghcr.io/$1/gnatgtk:$2
+      - sudo docker image rm ghcr.io/$1/gnat-arm7:$2
+      - sudo docker image rm ghcr.io/$1/gnat-mingw64:$2
+   description: Remove local Docker images of GNAT (required argument is the username and the image version)
+   flags:
+      - unixonly
