@@ -1,8 +1,7 @@
 ## General information
 
 The goal of this project is to collect various Docker images files related to
-the Ada programming language. Using these images requires Github account (yes,
-Github requires authentication even for pulling)
+the Ada programming language.
 
 ## Images list
 
@@ -14,7 +13,7 @@ The base image with GNAT FSF version and gprbuild for Linux 64bit. Based on
 the newest Ubuntu release. Using this doesn't require any special settings.
 Example:
 
-`sudo docker run -v $(pwd):/app docker.pkg.github.com/thindil/dockerada/gnat:2020.1 bin/sh -c "gprbuild -P myproject.gpr"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat:2020.1 bin/sh -c "gprbuild -P myproject.gpr"`
 
 ### GNAT-Gtk
 
@@ -22,7 +21,7 @@ The base image with GNAT FSF version, development version of GtkAda library
 and gprbuild for Linux 64bit. Based on the newest Ubuntu release. Same as
 the standard GNAT image, this doesn't require any special settings. Example:
 
-`sudo docker run -v $(pwd):/app docker.pkg.github.com/thindil/dockerada/gnatgtk:2020.1 bin/sh -c "gprbuild -P myproject.gpr"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnatgtk:2020.1 bin/sh -c "gprbuild -P myproject.gpr"`
 
 ### GNAT-Mingw64
 The base image with GNAT MinGW 64bit FSF version and gprbuild. Based on the
@@ -31,7 +30,7 @@ need to build them by yourself. At this moment this image wasn't too good
 tested, thus please report any problems with it. To use it, you will need to
 setup `--target=x86_64-windows`. Example:
 
-`sudo docker run -v $(pwd):/app docker.pkg.github.com/thindil/dockerada/gnat-mingw64:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-mingw64:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
 
 ### GNAT-ARM64
 
@@ -41,7 +40,7 @@ additional library, you have to install it with suffix `:arm64`. Example:
 `apt install tcl-dev:arm64`. To use it, you will need to setup
 `--target=aarch64-linux-gnu`. Example:
 
-`sudo docker run -v $(pwd):/app docker.pkg.github.com/thindil/dockerada/gnat-arm64:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=aarch64-linux-gnu"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm64:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=aarch64-linux-gnu"`
 
 ### GNAT-ARMv7
 
@@ -51,7 +50,7 @@ any additional library, you have to install it with suffix `:armhf`.
 Example: `apt install libgtkada-dev:armhf`. To use it, you will need to setup
 `--target=arm-linux-gnueabihf`. Example:
 
-`sudo docker run -v $(pwd):/app docker.pkg.github.com/thindil/dockerada/gnat-arm7:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm7:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
 
 ## Usage
 
@@ -66,7 +65,7 @@ For example, to build just gnat version, type:
 
 You can also download some prepared images. They are available here:
 
-https://github.com/thindil/dockerada/packages
+https://github.com/thindil?tab=packages
 
 Navigate to the selected Docker image to get more information how to use them.
 
