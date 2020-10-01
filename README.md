@@ -52,6 +52,20 @@ Example: `apt install libgtkada-dev:armhf`. To use it, you will need to setup
 
 `sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm7:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
 
+### Ada-Build
+
+This is extended image for build some of my projects for Linux 64-bit. It
+contains:
+- GNAT FSF version
+- gprbuild
+- Tashy (and Tcl and Tk libraries)
+- libmagic-dev
+- libxmlada-schema9-dev
+- libxmlada-input9-dev
+Example usage:
+
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuild:2020.1 bin/sh -c "gprbuild -P myproject.gpr"`
+
 ## Usage
 
 To build any of this images, type in console in this same directory where files
