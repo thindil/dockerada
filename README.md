@@ -1,7 +1,9 @@
 ## General information
 
-The goal of this project is to collect various Docker images files related to
-the Ada programming language.
+The goal of this project is to collect various Docker images files (and images
+themselves) related to the Ada programming language. **Note:** Old versions of
+images (marked as *deprecated*) require Github account to download. Newer
+versions are available for everyone.
 
 ## Images list
 
@@ -62,9 +64,23 @@ contains:
 - libmagic-dev
 - libxmlada-schema9-dev
 - libxmlada-input9-dev
+
 Example usage:
 
 `sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuild:2020.1 bin/sh -c "gprbuild -P myproject.gpr"`
+
+### Ada-Build-Windows64
+
+This is extended image for build some of my projects for Windows 64-bit. It
+contains:
+- GNAT FSF version
+- gprbuild
+- Tashy (and Tcl and Tk libraries)
+- XmlAda
+
+Example usage:
+
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuildwin64:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
 
 ## Usage
 
