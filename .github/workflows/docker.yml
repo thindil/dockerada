@@ -1,0 +1,39 @@
+name: Create Docker Image
+
+on:
+   workflow_dispatch:
+      inputs:
+         filename:
+            description: Name of the Docker image configuration to build
+            required: true
+            default: Dockerfile.gnat
+         username:
+            description: Name of the Docker user
+            required: true
+            default: thindil
+         name:
+            desription: Name of the Docker image
+            required: true
+            default: gnat
+         version:
+            description: Version of the Docker image
+            required: true
+            default: 2020.1
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build the Docker image
+      run: docker image build -f ${{ github.event.inputs.filename }} -t ghcr.io/${{ github.event.inputs.username }}/${{ github.event.inputs.name }}:${{ github.event.inputs.version }} .
+
+    - name: Log in to the Github Container Registry
+      run: echo ${{ secrets.DOCKER_PASS }} | docker login ghcr.io --username=${{ github.event.inputs.username }} --password-stdin
+
+    - name: Upload images to the Github Container Registry
+      run: docker push ghcr.io/${{ github.event.inputs.username }}/${{ github.event.inputs.name }}:${{ github.event.inputs.version }}
