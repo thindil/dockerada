@@ -37,7 +37,7 @@ setup `--target=x86_64-windows`. Example:
 ### GNAT-ARM64
 
 The base image with GNAT FSF version and gprbuild for Arm64 (aarch64)
-architecture. Based on the stable Debian release. If you want to use any
+architecture. Based on the testing Debian release. If you want to use any
 additional library, you have to install it with suffix `:arm64`. Example:
 `apt install tcl-dev:arm64`. To use it, you will need to setup
 `--target=aarch64-linux-gnu`. Example:
@@ -47,7 +47,7 @@ additional library, you have to install it with suffix `:arm64`. Example:
 ### GNAT-ARMv7
 
 The base image with GNAT FSF version and gprbuild for armv7 (32 bit),
-example: Raspberry Pi. Based on the stable Debian release. If you want to use
+example: Raspberry Pi. Based on the testing Debian release. If you want to use
 any additional library, you have to install it with suffix `:armhf`.
 Example: `apt install libgtkada-dev:armhf`. To use it, you will need to setup
 `--target=arm-linux-gnueabihf`. Example:
