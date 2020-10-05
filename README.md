@@ -60,7 +60,8 @@ This is extended image for build some of my projects for Linux 64-bit. It
 contains:
 - GNAT FSF version
 - gprbuild
-- Tashy (and Tcl and Tk libraries)
+- Tcl
+- Tashy (and Tcl and Tk libraries for Windows)
 - libmagic-dev
 - libxmlada-schema9-dev
 - libxmlada-input9-dev
