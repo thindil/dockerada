@@ -1,8 +1,7 @@
 FROM ghcr.io/thindil/tashy-mingw64:8.6.9
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
- && apt-get update && apt-get install -y make \
- wget \
+ && apt-get update && apt-get install -y make wget tcl \
  && wget https://github.com/AdaCore/xmlada/archive/community-2019.tar.gz \
  && tar -xf community-2019.tar.gz \
  && cd xmlada-community-2019 \
@@ -12,8 +11,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  && cd .. \
  && rm -rf xmlada-community-2019 \
  && rm community-2019.tar.gz \
- && apt purge -y wget \
- make \
+ && apt purge -y wget make \
  && apt-get autoremove -y \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
