@@ -1,9 +1,23 @@
+## Table of Contents
+* [General information](#General-information)
+* [Versioning](#Versioning)
+* [Images List](#Images-list)
+* [Usage](#Usage)
+* [Adding a new image](#Adding-a-new-image)
+* [FAQ] (#FAQ)
+* [License](#License)
+
 ## General information
 
 The goal of this project is to collect various Docker images files (and images
 themselves) related to the Ada programming language. **Note:** Old versions of
 images (marked as *deprecated*) require Github account to download. Newer
 versions are available for everyone.
+
+## Versioning
+
+Each image uses as the version number the number of major version of the GNAT.
+Thus for example, *gnatgtk:9* means that image is based on the GNAT version 9.x
 
 ## Images list
 
@@ -15,7 +29,7 @@ The base image with GNAT FSF version and gprbuild for Linux 64bit. Based on
 the newest Ubuntu release. Using this doesn't require any special settings.
 Example:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat:2020.1 bin/sh -c "gprbuild -P myproject.gpr"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat:9 bin/sh -c "gprbuild -P myproject.gpr"`
 
 ### GNAT-Gtk
 
@@ -23,7 +37,7 @@ The base image with GNAT FSF version, development version of GtkAda library
 and gprbuild for Linux 64bit. Based on the newest Ubuntu release. Same as
 the standard GNAT image, this doesn't require any special settings. Example:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnatgtk:2020.1 bin/sh -c "gprbuild -P myproject.gpr"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnatgtk:9 bin/sh -c "gprbuild -P myproject.gpr"`
 
 ### GNAT-Mingw64
 The base image with GNAT MinGW 64bit FSF version and gprbuild. Based on the
@@ -32,7 +46,7 @@ need to build them by yourself. At this moment this image wasn't too good
 tested, thus please report any problems with it. To use it, you will need to
 setup `--target=x86_64-windows`. Example:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-mingw64:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-mingw64:9 bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
 
 ### GNAT-ARM64
 
@@ -42,7 +56,7 @@ additional library, you have to install it with suffix `:arm64`. Example:
 `apt install tcl-dev:arm64`. To use it, you will need to setup
 `--target=aarch64-linux-gnu`. Example:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm64:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=aarch64-linux-gnu"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm64:9 bin/sh -c "gprbuild -P myproject.gpr --target=aarch64-linux-gnu"`
 
 ### GNAT-ARMv7
 
@@ -52,7 +66,7 @@ any additional library, you have to install it with suffix `:armhf`.
 Example: `apt install libgtkada-dev:armhf`. To use it, you will need to setup
 `--target=arm-linux-gnueabihf`. Example:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm7:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm7:9 bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
 
 ### Ada-Build
 
@@ -68,7 +82,7 @@ contains:
 
 Example usage:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuild:2020.1 bin/sh -c "gprbuild -P myproject.gpr"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuild:9 bin/sh -c "gprbuild -P myproject.gpr"`
 
 ### Ada-Build-Windows64
 
@@ -81,7 +95,7 @@ contains:
 
 Example usage:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuildwin64:2020.1 bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuildwin64:9 bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
 
 ## Usage
 
