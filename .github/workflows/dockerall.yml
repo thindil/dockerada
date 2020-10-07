@@ -1,4 +1,4 @@
-name: Create Docker Image
+name: Create All Docker Images
 
 on:
    workflow_dispatch:
