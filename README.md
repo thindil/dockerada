@@ -1,11 +1,11 @@
 ## Table of Contents
-* [General information](#General-information)
-* [Versioning](#Versioning)
-* [Images List](#Images-list)
-* [Usage](#Usage)
-* [Adding a new image](#Adding-a-new-image)
-* [FAQ] (#FAQ)
-* [License](#License)
+* [General information](#general-information)
+* [Versioning](#versioning)
+* [Images List](#images-list)
+* [Usage](#usage)
+* [Adding a new image](#adding-a-new-image)
+* [FAQ](#faq)
+* [License](#license)
 
 ## General information
 
