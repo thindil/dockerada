@@ -1,0 +1,44 @@
+name: Create Docker Image
+
+on:
+   workflow_dispatch:
+      inputs:
+         username:
+            description: Name of the Docker user
+            required: true
+            default: thindil
+         version:
+            description: Version of the Docker images
+            required: true
+            default: 9
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build the Docker images
+      run: |
+         docker image build -f Dockerfile.aarch64 -t ghcr.io/${{ github.event.inputs.username }}/gnat-arm64:${{ github.event.inputs.version }} .
+         docker image build -f Dockerfile.adabuild -t ghcr.io/${{ github.event.inputs.username }}/adabuild:${{ github.event.inputs.version }} .
+         docker image build -f Dockerfile.adabuildwin64 -t ghcr.io/${{ github.event.inputs.username }}/adabuildwin64:${{ github.event.inputs.version }} .
+         docker image build -f Dockerfile.gnat -t ghcr.io/${{ github.event.inputs.username }}/gnat:${{ github.event.inputs.version }} .
+         docker image build -f Dockerfile.gnatgtk -t ghcr.io/${{ github.event.inputs.username }}/gnatgtk:${{ github.event.inputs.version }} .
+         docker image build -f Dockerfile.gnueabihf -t ghcr.io/${{ github.event.inputs.username }}/gnat-arm7:${{ github.event.inputs.version }} .
+         docker image build -f Dockerfile.mingw64 -t ghcr.io/${{ github.event.inputs.username }}/gnat-mingw64:${{ github.event.inputs.version }} .
+
+    - name: Log in to the Github Container Registry
+      run: echo ${{ secrets.DOCKER_PASS }} | docker login ghcr.io --username=${{ github.event.inputs.username }} --password-stdin
+
+    - name: Upload images to the Github Container Registry
+      run: docker push ghcr.io/${{ github.event.inputs.username }}/gnat-arm64:${{ github.event.inputs.version }}
+      run: docker push ghcr.io/${{ github.event.inputs.username }}/adabuild:${{ github.event.inputs.version }}
+      run: docker push ghcr.io/${{ github.event.inputs.username }}/adabuildwin64:${{ github.event.inputs.version }}
+      run: docker push ghcr.io/${{ github.event.inputs.username }}/gnat:${{ github.event.inputs.version }}
+      run: docker push ghcr.io/${{ github.event.inputs.username }}/gnatgtk:${{ github.event.inputs.version }}
+      run: docker push ghcr.io/${{ github.event.inputs.username }}/gnat-arm7:${{ github.event.inputs.version }}
+      run: docker push ghcr.io/${{ github.event.inputs.username }}/gnat-mingw64:${{ github.event.inputs.version }}
