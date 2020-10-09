@@ -79,6 +79,7 @@ contains:
 - libmagic-dev
 - libxmlada-schema9-dev
 - libxmlada-input9-dev
+- asis-programs (gnattest, gnatpp, etc)
 
 Example usage:
 
