@@ -1,7 +1,7 @@
-FROM ghcr.io/thindil/tashy-mingw64:8.6.9
+FROM ghcr.io/thindil/tashy-mingw64:8.6.10
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
- && apt-get update && apt-get install -y make wget tcl \
+ && apt-get update && apt-get dist-upgrade -y  && apt-get install -y make wget tcl \
  && wget https://github.com/AdaCore/xmlada/archive/community-2019.tar.gz \
  && tar -xf community-2019.tar.gz \
  && cd xmlada-community-2019 \
