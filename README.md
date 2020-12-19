@@ -3,16 +3,16 @@
 * [Versioning](#versioning)
 * [Images List](#images-list)
 * [Usage](#usage)
-* [Adding a new image](#adding-a-new-image)
-* [FAQ](#faq)
-* [License](#license)
 
 ## General information
 
 The goal of this project is to collect various Docker images files (and images
 themselves) related to the Ada programming language. **Note:** Old versions of
 images (marked as *deprecated*) require Github account to download. Newer
-versions are available for everyone.
+versions are available for everyone. If you read this file on Github:
+**please don't send pull requests here**. All will be automatically closed.
+Any code propositions should go to the [Fossil](https://www.laeran.pl/repositories/dockerada)
+repository.
 
 ## Versioning
 
@@ -114,41 +114,3 @@ You can also download some prepared images. They are available here:
 https://github.com/thindil?tab=packages
 
 Navigate to the selected Docker image to get more information how to use them.
-
-## Adding a new image
-
-If you have any Docker file related to the Ada programming language:
-
-* Clone this repo
-* Add a new Docker file
-* Add it here via [pull request](https://github.com/thindil/dockerada/pulls)
-
-## FAQ
-
-Q: Why arm64 and armv7 images are based on Debian?
-
-A: At this moment (2020-08) Ubuntu has problems with properly support both
-architectures: some repositories are not available or missing. In that
-situation it is easier to build/extend Docker image from Debian than from
-Ubuntu.
-
-Q: Why not use Docker buildx for build multiarch images?
-
-A: While in 90% of situations buildx multiarch Docker images works in the rest
-10% they fails miserably. And this 10% is exactly GCC/GNAT situation. Buildx
-Docker images are extremely slow (even 15-30 times slower) compared to native
-or cross compilation. This is probably related to use Qemu in them. Even using
-Quemu-Kvm not helps. This is why in these images are used cross-compilers.
-
-## License
-
-If not specified another, all Docker files are released under Apache 2.0
-license
-
-----
-
-That's all for now, if you have any question, ideas or request, feel free to
-use the project issues (even if you want to talk about the project
-organization or lack of it) :)
-
-Bartek thindil Jasicki
