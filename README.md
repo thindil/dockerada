@@ -17,7 +17,7 @@ repository.
 ## Versioning
 
 Each image uses as the version number the number of major version of the GNAT.
-Thus for example, *gnatgtk:9* means that image is based on the GNAT version 9.x
+Thus, for example, *gnatgtk:9* means that image is based on the GNAT version 9.x
 
 ## Images list
 
@@ -44,7 +44,7 @@ The base image with GNAT MinGW 64bit FSF version and gprbuild. Based on the
 newest Ubuntu release. If you want to use any additional libraries, you will
 need to build them by yourself. At this moment this image wasn't too good
 tested, thus please report any problems with it. To use it, you will need to
-setup `--target=x86_64-windows`. Example:
+set up `--target=x86_64-windows`. Example:
 
 `sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-mingw64:9 bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
 
@@ -53,7 +53,7 @@ setup `--target=x86_64-windows`. Example:
 The base image with GNAT FSF version and gprbuild for Arm64 (aarch64)
 architecture. Based on the testing Debian release. If you want to use any
 additional library, you have to install it with suffix `:arm64`. Example:
-`apt install tcl-dev:arm64`. To use it, you will need to setup
+`apt install tcl-dev:arm64`. To use it, you will need to set up
 `--target=aarch64-linux-gnu`. Example:
 
 `sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm64:9 bin/sh -c "gprbuild -P myproject.gpr --target=aarch64-linux-gnu"`
@@ -63,7 +63,7 @@ additional library, you have to install it with suffix `:arm64`. Example:
 The base image with GNAT FSF version and gprbuild for armv7 (32 bit),
 example: Raspberry Pi. Based on the testing Debian release. If you want to use
 any additional library, you have to install it with suffix `:armhf`.
-Example: `apt install libgtkada-dev:armhf`. To use it, you will need to setup
+Example: `apt install libgtkada-dev:armhf`. To use it, you will need to set up
 `--target=arm-linux-gnueabihf`. Example:
 
 `sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm7:9 bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
@@ -72,14 +72,14 @@ Example: `apt install libgtkada-dev:armhf`. To use it, you will need to setup
 
 This is extended image for build some of my projects for Linux 64-bit. It
 contains:
-- GNAT FSF version
-- gprbuild
-- Tcl
-- Tashy (and Tcl and Tk libraries for Windows)
-- libmagic-dev
-- libxmlada-schema9-dev
-- libxmlada-input9-dev
-- asis-programs (gnattest, gnatpp, etc)
+* GNAT FSF version
+* gprbuild
+* Tcl
+* Tashy (and Tcl and Tk libraries for Windows)
+* libmagic-dev
+* libxmlada-schema9-dev
+* libxmlada-input9-dev
+* asis-programs (gnattest, gnatpp, etc)
 
 Example usage:
 
@@ -89,10 +89,10 @@ Example usage:
 
 This is extended image for build some of my projects for Windows 64-bit. It
 contains:
-- GNAT FSF version
-- gprbuild
-- Tashy (and Tcl and Tk libraries)
-- XmlAda
+* GNAT FSF version
+* gprbuild
+* Tashy (and Tcl and Tk libraries)
+* XmlAda
 
 Example usage:
 
@@ -100,7 +100,7 @@ Example usage:
 
 ## Usage
 
-To build any of this images, type in console in this same directory where files
+To build any of these images, type in console in this same directory where files
 are:
 
 `docker build --file [filename] .`
