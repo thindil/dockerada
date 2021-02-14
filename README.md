@@ -72,6 +72,7 @@ Example: `apt install libgtkada-dev:armhf`. To use it, you will need to set up
 
 This is extended image for build some of my projects for Linux 64-bit. It
 contains:
+
 * GNAT FSF version
 * gprbuild
 * Tcl
@@ -80,6 +81,7 @@ contains:
 * libxmlada-schema9-dev
 * libxmlada-input9-dev
 * asis-programs (gnattest, gnatpp, etc)
+* adacontrol
 
 Example usage:
 
@@ -89,6 +91,7 @@ Example usage:
 
 This is extended image for build some of my projects for Windows 64-bit. It
 contains:
+
 * GNAT FSF version
 * gprbuild
 * Tashy (and Tcl and Tk libraries)
