@@ -76,12 +76,14 @@ contains:
 * GNAT FSF version
 * gprbuild
 * Tcl
-* Tashy (and Tcl and Tk libraries for Windows)
+* Tk
+* Tashy (and Tcl and Tk development libraries)
 * libmagic-dev
 * libxmlada-schema9-dev
 * libxmlada-input9-dev
 * asis-programs (gnattest, gnatpp, etc)
 * adacontrol
+* libncursesada7-dev
 
 Example usage:
 
@@ -94,7 +96,7 @@ contains:
 
 * GNAT FSF version
 * gprbuild
-* Tashy (and Tcl and Tk libraries)
+* Tashy (and Tcl and Tk libraries for Windows)
 * XmlAda
 
 Example usage:
