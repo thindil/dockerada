@@ -103,6 +103,19 @@ Example usage:
 
 `sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuildwin64:9 bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
 
+### Ada-Build-Raspberry-Pi
+
+This is extended image for build some of my projects for Raspberry Pi (armv7). It
+contains:
+
+* GNAT FSF version
+* gprbuild
+* Tcl
+
+Example usage:
+
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuildraspi:9 bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
+
 ## Usage
 
 To build any of these images, type in console in this same directory where files
