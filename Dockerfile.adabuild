@@ -7,5 +7,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  asis-programs \
  libncursesada7-dev \
  adacontrol \
+ libcmark-dev \
+ libaws19-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
