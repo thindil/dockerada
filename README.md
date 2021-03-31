@@ -84,6 +84,8 @@ contains:
 * asis-programs (gnattest, gnatpp, etc)
 * adacontrol
 * libncursesada7-dev
+* libcmark-dev
+* libaws19-dev
 
 Example usage:
 
