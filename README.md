@@ -100,6 +100,7 @@ contains:
 * gprbuild
 * Tashy (and Tcl and Tk libraries for Windows)
 * XmlAda
+* libcmark
 
 Example usage:
 
