@@ -1,7 +1,11 @@
 FROM ghcr.io/thindil/tashy-mingw64:8.6.11
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
- && apt-get update && apt-get dist-upgrade -y  && apt-get install -y make wget tcl \
+ && apt-get update && apt-get dist-upgrade -y  && apt-get install -y make \
+ wget \
+ tcl \
+ cmake \
+ g++-mingw-w64-x86-64 \
  && wget https://github.com/AdaCore/xmlada/archive/community-2019.tar.gz \
  && tar -xf community-2019.tar.gz \
  && cd xmlada-community-2019 \
@@ -11,7 +15,16 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  && cd .. \
  && rm -rf xmlada-community-2019 \
  && rm community-2019.tar.gz \
- && apt purge -y wget make \
+ && wget https://github.com/commonmark/cmark/archive/refs/tags/0.29.0.tar.gz \
+ && tar -xf 0.29.0.tar.gz \
+ && cd cmark-0.29.0 \
+ && sed -i -e 's/i586-mingw32msvc/x86_64-w64-mingw32/g' toolchain-mingw32.cmake \
+ && make mingw \
+ && cp -r build-mingw/windows/* /opt/ \
+ && cd .. \
+ && rm 0.29.0.tar.gz \
+ && rm -rf cmark-0.29.0 \
+ && apt purge -y wget make cmake g++-mingw-w64-x86-64 \
  && apt-get autoremove -y \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
