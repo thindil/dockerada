@@ -101,6 +101,7 @@ contains:
 * Tashy (and Tcl and Tk libraries for Windows)
 * XmlAda
 * libcmark
+* AdaWebServer
 
 Example usage:
 
