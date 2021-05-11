@@ -79,8 +79,8 @@ contains:
 * Tk
 * Tashy (and Tcl and Tk development libraries)
 * libmagic-dev
-* libxmlada-schema9-dev
-* libxmlada-input9-dev
+* libxmlada-schema9-dev (set to use as static library)
+* libxmlada-input9-dev (set to use as static library)
 * asis-programs (gnattest, gnatpp, etc)
 * adacontrol
 * libncursesada7-dev
