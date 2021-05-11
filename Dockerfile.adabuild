@@ -9,6 +9,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  adacontrol \
  libcmark-dev \
  libaws19-dev \
+ && sed -i -e 's/dynamic/static/g' /usr/share/gpr/*.gpr \
  && ln -s /usr/share/ada/adainclude/templates_parser/templates_parser-configuration__standalone.ads /usr/share/ada/adainclude/templates_parser/templates_parser-configuration.ads \
  && ln -s /usr/share/ada/adainclude/aws/ssl-thin__gnutls.ads /usr/share/ada/adainclude/aws/ssl-thin.ads \
  && apt-get clean \
