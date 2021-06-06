@@ -3,7 +3,7 @@ ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  && dpkg --add-architecture armhf \
  && apt-get update && apt-get dist-upgrade -y && apt-get install -y \
- gnat-9-arm-linux-gnueabihf \
+ gnat-10-arm-linux-gnueabihf \
  gprbuild \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
