@@ -1,16 +1,30 @@
-FROM ghcr.io/thindil/tashy:8.6.11
+FROM ghcr.io/thindil/gnat:10
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
- && apt-get update && apt-get dist-upgrade -y  && apt-get install -y libmagic-dev \
- libxmlada-schema9-dev \
- libxmlada-input9-dev \
+ && apt-get update && apt-get install -y \
+ tcl-dev \
+ tk-dev \
+ wget \
+ libmagic-dev \
+ libxmlada-schema10-dev \
+ libxmlada-input10-dev \
  asis-programs \
- libncursesada7-dev \
+ libncursesada9-dev \
  adacontrol \
  libcmark-dev \
- libaws19-dev \
+ libaws20-dev \
  && sed -i -e 's/dynamic/static/g' /usr/share/gpr/*.gpr \
  && ln -s /usr/share/ada/adainclude/templates_parser/templates_parser-configuration__standalone.ads /usr/share/ada/adainclude/templates_parser/templates_parser-configuration.ads \
  && ln -s /usr/share/ada/adainclude/aws/ssl-thin__gnutls.ads /usr/share/ada/adainclude/aws/ssl-thin.ads \
+ && wget https://github.com/thindil/tashy/archive/refs/tags/8.6.11.tar.gz \
+ && tar -xf 8.6.11.tar.gz \
+ && cd /tashy-8.6.11 \
+ && tclsh scripts/setup.tcl --nogui \
+ && gprbuild -P tashy.gpr \
+ && gprinstall -P tashy.gpr -p -XLIBRARY_TYPE=static --build-var=LIBRARY_TYPE --build-name=static \
+ && cd .. \
+ && rm -rf /tashy-8.6.11 \
+ && rm 8.6.11.tar.gz \
+ && apt purge -y wget \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
