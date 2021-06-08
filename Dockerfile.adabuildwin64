@@ -10,6 +10,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  gnat \
  gcc \
  unzip \
+ binutils \
  g++-mingw-w64-x86-64 \
  && wget https://github.com/AdaCore/xmlada/archive/community-2019.tar.gz \
  && tar -xf community-2019.tar.gz \
@@ -30,7 +31,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  && rm 0.29.0.tar.gz \
  && rm -rf cmark-0.29.0 \
  && ln -s /bin/x86_64-windows-ar /bin/unknown-ar \
- && ln -s /bin/x86_64-windows-ar /bin/ar \
  && wget https://github.com/AdaCore/aws/releases/download/v21.0.0/aws-21.0.0.zip \
  && unzip aws-21.0.0.zip \
  && cd aws-21.0.0 \
