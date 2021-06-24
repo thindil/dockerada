@@ -73,7 +73,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  && rm 8.6.11.tar.gz \
  && apt-get purge -y \
  wget \
- make \
  gcc \
  cmake \
  g++-mingw-w64-x86-64 \
