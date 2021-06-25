@@ -86,6 +86,7 @@ contains:
 * libncursesada7-dev
 * libcmark-dev
 * libaws19-dev
+* make
 
 Example usage:
 
@@ -102,6 +103,7 @@ contains:
 * XmlAda
 * libcmark
 * AdaWebServer
+* make
 
 Example usage:
 
@@ -115,6 +117,7 @@ contains:
 * GNAT FSF version
 * gprbuild
 * Tcl
+* make
 
 Example usage:
 
