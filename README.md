@@ -8,8 +8,8 @@
 
 The goal of this project is to collect various Docker images files (and images
 themselves) related to the Ada programming language. **Note:** Old versions of
-images (marked as *deprecated*) require Github account to download. Newer
-versions are available for everyone. If you read this file on Github:
+images (marked as *deprecated*) require GitHub account to download. Newer
+versions are available for everyone. If you read this file on GitHub:
 **please don't send pull requests here**. All will be automatically closed.
 Any code propositions should go to the [Fossil](https://www.laeran.pl/repositories/dockerada)
 repository.
@@ -17,7 +17,10 @@ repository.
 ## Versioning
 
 Each image uses as the version number the number of major version of the GNAT.
-Thus, for example, *gnatgtk:9* means that image is based on the GNAT version 9.x
+Thus, for example, *gnatgtk:9* means that image is based on the GNAT version 9.x.
+The SPARK image version number is the year of release of SPARK Discovery. For
+example, *adaspark:2021* means that image contains SPARK Discovery from the
+year 2021.
 
 ## Images list
 
@@ -122,6 +125,16 @@ contains:
 Example usage:
 
 `sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuildraspi:9 bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
+
+### Ada-Spark
+
+This image contains SPARK 2014 discovery. It is based on Debian stable image,
+it doesn't have Ada compiler installed. Can be used only to `gnatprove` a SPARK
+code.
+
+Exaple usage:
+
+`sudo docker run -w /app -v $(pwd):/app ghcr.io/thindil/adaspark:2021 bin/sh -c "gnatprove -P myproject.gpr"`
 
 ## Usage
 
