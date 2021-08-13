@@ -7,10 +7,8 @@
 ## General information
 
 The goal of this project is to collect various Docker images files (and images
-themselves) related to the Ada programming language. **Note:** Old versions of
-images (marked as *deprecated*) require GitHub account to download. Newer
-versions are available for everyone. If you read this file on GitHub:
-**please don't send pull requests here**. All will be automatically closed.
+themselves) related to the Ada programming language. If you read this file on
+GitHub: **please don't send pull requests here**. All will be automatically closed.
 Any code propositions should go to the [Fossil](https://www.laeran.pl/repositories/dockerada)
 repository.
 
