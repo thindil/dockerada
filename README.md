@@ -30,7 +30,7 @@ The base image with GNAT FSF version and gprbuild for Linux 64bit. Based on
 the newest Ubuntu release. Using this doesn't require any special settings.
 Example:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat:9 bin/sh -c "gprbuild -P myproject.gpr"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat:9 /bin/sh -c "gprbuild -P myproject.gpr"`
 
 ### GNAT-Gtk
 
@@ -38,7 +38,7 @@ The base image with GNAT FSF version, development version of GtkAda library
 and gprbuild for Linux 64bit. Based on the newest Ubuntu release. Same as
 the standard GNAT image, this doesn't require any special settings. Example:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnatgtk:9 bin/sh -c "gprbuild -P myproject.gpr"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnatgtk:9 /bin/sh -c "gprbuild -P myproject.gpr"`
 
 ### GNAT-Mingw64
 The base image with GNAT MinGW 64bit FSF version and gprbuild. Based on the
@@ -47,7 +47,7 @@ need to build them by yourself. At this moment this image wasn't too good
 tested, thus please report any problems with it. To use it, you will need to
 set up `--target=x86_64-windows`. Example:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-mingw64:9 bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-mingw64:9 /bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
 
 ### GNAT-ARM64
 
@@ -57,7 +57,7 @@ additional library, you have to install it with suffix `:arm64`. Example:
 `apt install tcl-dev:arm64`. To use it, you will need to set up
 `--target=aarch64-linux-gnu`. Example:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm64:9 bin/sh -c "gprbuild -P myproject.gpr --target=aarch64-linux-gnu"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm64:9 /bin/sh -c "gprbuild -P myproject.gpr --target=aarch64-linux-gnu"`
 
 ### GNAT-ARMv7
 
@@ -67,7 +67,7 @@ any additional library, you have to install it with suffix `:armhf`.
 Example: `apt install libgtkada-dev:armhf`. To use it, you will need to set up
 `--target=arm-linux-gnueabihf`. Example:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm7:9 bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/gnat-arm7:9 /bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
 
 ### Ada-Build
 
@@ -91,7 +91,7 @@ contains:
 
 Example usage:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuild:9 bin/sh -c "gprbuild -P myproject.gpr"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuild:9 /bin/sh -c "gprbuild -P myproject.gpr"`
 
 ### Ada-Build-Windows64
 
@@ -108,7 +108,7 @@ contains:
 
 Example usage:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuildwin64:9 bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuildwin64:9 /bin/sh -c "gprbuild -P myproject.gpr --target=x86_64-windows"`
 
 ### Ada-Build-Raspberry-Pi
 
@@ -122,7 +122,7 @@ contains:
 
 Example usage:
 
-`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuildraspi:9 bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/adabuildraspi:9 /bin/sh -c "gprbuild -P myproject.gpr --target=arm-linux-gnueabihf"`
 
 ### Ada-Spark
 
@@ -130,9 +130,9 @@ This image contains SPARK 2014 discovery. It is based on Debian stable image,
 it doesn't have Ada compiler installed. Can be used only to `gnatprove` a SPARK
 code.
 
-Exaple usage:
+Example usage:
 
-`sudo docker run -w /app -v $(pwd):/app ghcr.io/thindil/adaspark:2021 bin/sh -c "gnatprove -P myproject.gpr"`
+`sudo docker run -w /app -v $(pwd):/app ghcr.io/thindil/adaspark:2021 /bin/sh -c "gnatprove -P myproject.gpr"`
 
 ## Usage
 
