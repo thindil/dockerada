@@ -1,5 +1,7 @@
 FROM ghcr.io/thindil/gnat:10
+COPY scripts/spark.qs /tmp/
 ENV TZ=Europe/Berlin
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/gnat/bin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  && apt-get update && apt-get install -y \
  tcl-dev \
@@ -13,6 +15,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  adacontrol \
  libcmark-dev \
  libaws20-dev \
+ dbus \
  make \
  && sed -i -e 's/dynamic/static/g' /usr/share/gpr/*.gpr \
  && ln -s /usr/share/ada/adainclude/templates_parser/templates_parser-configuration__standalone.ads /usr/share/ada/adainclude/templates_parser/templates_parser-configuration.ads \
@@ -26,6 +29,12 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  && cd .. \
  && rm -rf /tashy-8.6.11 \
  && rm 8.6.11.tar.gz \
- && apt purge -y wget \
+ && wget -q "https://community.download.adacore.com/v1/a639696a9fd3bdf0be21376cc2dc3129323cbe42?filename=gnat-2020-20200818-x86_64-linux-bin&rand=2" \
+  -O /tmp/gnat-2020-20200818-x86_64-linux-bin \
+ && chmod +x /tmp/gnat-2020-20200818-x86_64-linux-bin \
+ && /tmp/gnat-2020-20200818-x86_64-linux-bin \
+   --platform minimal --script /tmp/spark.qs \
+ && rm -rf /tmp/gnat-2020-20200818-x86_64-linux-bin \
+ && apt purge -y wget dbus \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
