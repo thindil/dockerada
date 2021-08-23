@@ -88,6 +88,7 @@ contains:
 * libcmark-dev
 * libaws19-dev
 * make
+* Spark 2014 discovery
 
 Example usage:
 
