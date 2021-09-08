@@ -58,9 +58,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  && cd / \
  && rm -rf tcl8.6.10 \
  && rm -rf tk8.6.10 \
- && wget https://github.com/thindil/tashy/archive/refs/tags/8.6.11.tar.gz \
- && tar -xf 8.6.11.tar.gz \
- && cd /tashy-8.6.11 \
+ && wget https://github.com/thindil/tashy/archive/refs/tags/8.6.12.tar.gz \
+ && tar -xf 8.6.12.tar.gz \
+ && cd /tashy-8.6.12 \
  && sed -i -e 's/$CC/$CC -I\/opt\/include/g' scripts/setup.tcl \
  && tclsh scripts/setup.tcl --nogui \
  && sed -i -e 's/usr/opt/g' tash_options.gpr \
@@ -69,8 +69,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  && gprbuild -P tashy.gpr -XLIBRARY_TYPE=static --target=x86_64-windows \
  && gprinstall -f -P tashy.gpr --create-missing-dirs -XLIBRARY_TYPE=static --build-var=LIBRARY_TYPE --build-name=static --target=x86_64-windows \
  && cd .. \
- && rm -rf /tashy-8.6.11 \
- && rm 8.6.11.tar.gz \
+ && rm -rf /tashy-8.6.12 \
+ && rm 8.6.12.tar.gz \
  && apt-get purge -y \
  wget \
  gcc \
