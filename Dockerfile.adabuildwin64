@@ -66,6 +66,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
  && sed -i -e 's/usr/opt/g' tash_options.gpr \
  && sed -i -e 's/8.6/86/g' tash_options.gpr \
  && sed -i -e 's/""/"-L\/opt\/lib"/g' tash_options.gpr \
+ && sed -i -e 's/"-fpic",//g' tash_options.gpr \
+ && sed -i -e 's/"-lto",//g' tash_options.gpr \
  && gprbuild -P tashy.gpr -XLIBRARY_TYPE=static --target=x86_64-windows \
  && gprinstall -f -P tashy.gpr --create-missing-dirs -XLIBRARY_TYPE=static --build-var=LIBRARY_TYPE --build-name=static --target=x86_64-windows \
  && cd .. \
