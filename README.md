@@ -135,6 +135,28 @@ Example usage:
 
 `sudo docker run -w /app -v $(pwd):/app ghcr.io/thindil/adaspark:2021 /bin/sh -c "gnatprove -P myproject.gpr"`
 
+### AdaControl
+
+This is an extended image to use AdaControl to check some of my projects. It contains:
+
+* GNAT FSF version
+* gprbuild
+* Tcl
+* Tk
+* Tashy (and Tcl and Tk development libraries)
+* libmagic-dev
+* libxmlada-schema9-dev (set to use as static library)
+* libxmlada-input9-dev (set to use as static library)
+* adacontrol
+* libncursesada7-dev
+* libcmark-dev
+* libaws19-dev
+* make
+
+Example usage:
+
+`sudo docker run -v $(pwd):/app ghcr.io/thindil/adacontrol:9 /bin/sh -c "adactl -P myproject.gpr -f myrules.aru"`
+
 ## Usage
 
 To build any of these images, type in console in this same directory where files
