@@ -12,6 +12,8 @@ GitHub: **please don't send pull requests here**. All will be automatically clos
 Any code propositions should go to the [Fossil](https://www.laeran.pl/repositories/dockerada)
 repository.
 
+**INFO:**This project is no longer maintained. Feel free to clone it and take care about it.
+
 ## Versioning
 
 Each image uses as the version number the number of major version of the GNAT.
